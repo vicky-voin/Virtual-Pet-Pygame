@@ -1,3 +1,5 @@
 {
-    "type": "Cat"
+    "type": "Square",
+    "sprite": "red_square.png",
+    "spriteScale": 2
 }

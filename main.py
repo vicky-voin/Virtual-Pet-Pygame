@@ -1,5 +1,7 @@
 import pygame
+import os
 from image_loader import ImageLoader
+from pet import Pet
 
 SCREEN_WIDTH = 480
 SCREEN_HEIGHT = 640
@@ -11,10 +13,6 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 clock = pygame.time.Clock()
 running = True
 
-def draw_cat(image_loader):
-    catImage = image_loader.load_image("Cat4.png", -1, 15)
-    return catImage
-
 while running:
 
     for event in pygame.event.get():
@@ -25,9 +23,9 @@ while running:
 
     image_loader = ImageLoader("data")
 
-    cat = draw_cat(image_loader)
+    cat = Pet.instantiate(os.path.join("data", "pet_cat.json"))
 
-    screen.blit(cat[0], (0,0))
+    screen.blit(cat.sprite[0], (0,0))
 
     pygame.display.flip()
 

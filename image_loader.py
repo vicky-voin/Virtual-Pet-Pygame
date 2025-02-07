@@ -18,6 +18,6 @@ class ImageLoader:
         image = image.convert()
         if colorkey is not None:
             if colorkey == -1:
-                colorkey = image.get_at((0, 0))
+                colorkey = pygame.Color(255,255,255,255)
             image.set_colorkey(colorkey, pygame.RLEACCEL)
         return image, image.get_rect()
