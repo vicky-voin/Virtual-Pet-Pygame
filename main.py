@@ -6,6 +6,8 @@ from pet import Pet
 SCREEN_WIDTH = 480
 SCREEN_HEIGHT = 640
 BACKGROUND_COLOR = "pink"
+DATA_FOLDER = "data"
+DEFAULT_PET =  "pet_cat.json"
 
 # pygame setup
 pygame.init()
@@ -21,9 +23,9 @@ while running:
 
     screen.fill(BACKGROUND_COLOR)
 
-    image_loader = ImageLoader("data")
+    image_loader = ImageLoader(DATA_FOLDER)
 
-    cat = Pet.instantiate(os.path.join("data", "pet_cat.json"))
+    cat = Pet.instantiate(os.path.join(DATA_FOLDER, DEFAULT_PET))
 
     screen.blit(cat.sprite[0], (0,0))
 
