@@ -29,10 +29,7 @@ class Need:
         self.startLevel = startLevel
         self._currentLevel = startLevel
 
-    def _get_remainingTime(self):
+    @property
+    def remainingTime(self):
         return self._cooldown - (self._currentLevel * self._cooldown)
-    
-    remainingTime = property(
-        fget=_get_remainingTime
-    )
     
