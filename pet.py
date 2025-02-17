@@ -24,12 +24,24 @@ class Pet:
     
 
 class Need:
-    def __init__(self, startLevel, cooldown):
+    def __init__(self, startLevel, cooldown, actionString):
         self._cooldown = cooldown
         self.startLevel = startLevel
-        self._currentLevel = startLevel
+        self._fulfillLevel = startLevel
+        self.actionString = actionString
 
     @property
-    def remainingTime(self):
-        return self._cooldown - (self._currentLevel * self._cooldown)
+    def remainingTimeTillCritical(self):
+        return self._fulfillLevel * self._cooldown
+    
+    @property
+    def fulfillPercentage(self):
+        return self._fulfillLevel
+    
+    def fulfill(self):
+        self._fulfillLevel = 1
+
+    def update(self, deltaTime):
+        self._fulfillLevel -= deltaTime / self._cooldown
+        self._fulfillLevel = min(1, max(0, self._fulfillLevel))
     
