@@ -1,0 +1,47 @@
+{
+    "button":
+    {
+        "colours":
+        {
+            "normal_border": "White",
+            "normal_bg": "SlateGray",
+            "normal_text": "White"
+        },
+        "misc":
+        {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": "10",
+            "border_width": "3"
+        }
+        
+    },
+
+    "@need_button-full":
+     {
+        "colours":
+        {
+            "normal_border": "White",
+            "normal_bg": "Green",
+            "normal_text": "White"
+        }
+    },
+    "@need_button-neutral":
+     {
+         "colours":
+        {
+            "normal_border": "White",
+            "normal_bg": "SlateGray",
+            "normal_text": "White"
+        }
+    },
+    "@need_button-critical":
+     {
+         "colours":
+        {
+            "normal_border": "White",
+            "normal_bg": "Red",
+            "normal_text": "White"
+        }
+    }
+
+}
